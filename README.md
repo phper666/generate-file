@@ -1,13 +1,13 @@
-####功能说明   
+### 功能说明   
 1、能替换某个项目下的所有文件内容   
 2、能复制原目录文件生成一个内容被替换过新的项目
 
-####使用   
+### 使用   
 ```shell
 composer require phper666/generate-file:~1.0
 ```
 
-####例子   
+### 例子   
 ```shell
 namespace Phper666\GenerateFile;
 require "GenerateFile.php";
