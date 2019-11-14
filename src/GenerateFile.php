@@ -31,7 +31,7 @@ class GenerateFile
     public $replaceExt = ['*'];
 
     // 替换时是否生成新的目录，如果不为空会默认生成一个项目跟原文件目录一样，并且会自动替换新生成项目的文件和内容，为空则会直接替换当前项目文件和内容
-    public $projectName = '';
+    public $newProjectDir = '';
 
     // 是否开启文件名替换，默认开启
     public $isReplaceFileName = true;
@@ -58,7 +58,7 @@ class GenerateFile
             $newFiles = $this->replaceFilesName($originalFiles);
         }
 
-        if ($this->projectName != '') { // 生成新目录
+        if ($this->newProjectDir != '') { // 生成新目录
             $newFiles = $this->makeNewProject($newFiles);
         }
 
@@ -122,12 +122,12 @@ class GenerateFile
     protected function makeNewProject($newFiles)
     {
         // 替换项目目录
-        $dir = explode('/', $this->replaceDir);
-        $dirName = array_pop($dir); // 去掉最后一个数据
-        $dir[] = $this->projectName;
-        $dir = implode('/', $dir);
-        $newFiles = str_replace($this->replaceDir, $dir, $newFiles);
-        if ($dirName == $this->projectName) { // 如果是原项目，直接返回，没有必要跑生成目录
+//        $dir = explode('/', $this->replaceDir);
+//        $dirName = array_pop($dir); // 去掉最后一个数据
+//        $dir[] = $this->newProjectDir;
+//        $dir = implode('/', $dir);
+        $newFiles = str_replace($this->replaceDir, $this->newProjectDir, $newFiles);
+        if ($this->replaceDir == $this->newProjectDir) { // 如果是原项目，直接返回，没有必要跑生成目录
             return $newFiles;
         }
         $this->makeDirectory($newFiles); // 生成新的目录
@@ -172,9 +172,9 @@ class GenerateFile
      * @param string $fileName
      * @return $this
      */
-    public function setProjectName($fileName)
+    public function setNewProjectDir($fileName)
     {
-        $this->projectName = $fileName;
+        $this->newProjectDir = $fileName;
         return $this;
     }
 
@@ -199,7 +199,7 @@ class GenerateFile
         $this->replaceDir = '';
         $this->replaceExt = ['*'];
         $this->isReplaceFileName = true;
-        $this->projectName = '';
+        $this->newProjectDir = '';
         return $this;
     }
 

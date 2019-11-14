@@ -18,11 +18,12 @@ $params = [
 
 // 设置要处理的目录，必须要绝对路径,并且目录一定要存在
 $dir = '/app/www/TmgAdminBE/tmg-addons-stub/wxapp-template';
+$newDir = '/app/www/TmgAdminBE/tmg-addons-stub/wxapp-test';
 
 $gf->setDefaultParams()  // 初始化参数，主要是为了解决常驻内存单例的问题
     ->setReplaceDir($dir) // 设置处理的目录
     ->setReplaceParams($params) // 设置要替换的参数
-    ->setProjectName('wxapp-test') // 设置生成新的项目名称，为空则不会生成新的项目，会默认替换当前项目的文件、目录、文件内容，如果设置了项目名称，则不会修改当前目录，会copy一份新的项目，并且替换新的项目文件内容
+    ->setNewProjectDir($newDir) // 设置生成新的项目名称，为空则不会生成新的项目，会默认替换当前项目的文件、目录、文件内容，如果设置了项目名称，则不会修改当前目录，会copy一份新的项目，并且替换新的项目文件内容
     ->setReplaceFileName(true) // 是否开启文件名称替换，开启后会自动替换文件的名称，不会替换目录的名称
     ->setReplaceFileExt(['*']) // 设置支持替换文件的后缀，默认替换项目下的所有的文件
     ->run();
