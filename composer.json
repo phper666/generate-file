@@ -1,0 +1,29 @@
+{
+    "name": "phper666/generate-file",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "php",
+        "phper666",
+        "generate-file"
+    ],
+    "minimum-stability": "dev",
+    "description": "phper666 generate-file Component",
+    "autoload": {
+        "files": [],
+        "psr-4": {
+            "Phper666\\GenerateFile\\": "src/"
+        }
+    },
+    "autoload-dev": {},
+    "require": {
+        "php": ">=7.0",
+        "ext-swoole": ">=4.4"
+    },
+    "require-dev": {},
+    "config": {
+        "sort-packages": true
+    },
+    "scripts": {},
+    "extra": {}
+}

@@ -1,15 +1,10 @@
-# generate-file
-####功能说明
-1、能替换某个项目下的所有文件内容   
-2、能复制原目录文件生成一个内容被替换过新的项目
-
-####使用
-```shell
-composer require phper666/generate-file:~1.0
-```
-
-####例子
-```shell
+<?php
+/**
+ * Created by PhpStorm.
+ * User: liyuzhao
+ * Date: 2019-11-14
+ * Time: 11:13
+ */
 namespace Phper666\GenerateFile;
 require "GenerateFile.php";
 $gf = new GenerateFile();
@@ -33,4 +28,3 @@ $gf->setDefaultParams()  // 初始化参数，主要是为了解决常驻内存�
     ->run();
 
 echo true;
-```
