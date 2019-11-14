@@ -13,7 +13,7 @@ namespace Phper666\GenerateFile;
 require "GenerateFile.php";
 $gf = new GenerateFile();
 
-// 要替换的参数 key为文件、目录、文件内容里面的key，value为要替换的值
+// 要替换的参数 key为文件名称、目录名称、文件内容，value为要替换的值
 $params = [
     'wxapp-template' => 'wxapp-test',
     'wxapp_template' => 'wxapp_test',
