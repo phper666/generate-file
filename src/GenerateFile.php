@@ -81,7 +81,7 @@ class GenerateFile
             if (!empty($newFiles[$index])) {
                 file_put_contents($newFiles[$index], $file);
                 // 如果开启文件名称替换、并且文件名称改过,则删除原文件
-                if ($this->isReplaceFileName && $filePath != $newFiles[$index]) {
+                if ($this->isReplaceFileName && $this->newProjectDir == $this->replaceDir && $filePath != $newFiles[$index]) {
                     @unlink($filePath);
                 }
             }
