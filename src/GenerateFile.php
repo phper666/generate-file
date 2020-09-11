@@ -249,9 +249,9 @@ class GenerateFile
                     }
                 }
                 closedir($handle);
-                return $files;
             }
         }
+         return $files;
     }
 }
 
